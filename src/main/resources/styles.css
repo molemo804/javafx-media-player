@@ -1,0 +1,139 @@
+/* ============================================================
+   Root / global
+   ============================================================ */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #1e1e1e;
+}
+
+/* ============================================================
+   Sidebar (left panel with playlists)
+   ============================================================ */
+.sidebar {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 12;
+}
+
+.sidebar .label {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* ============================================================
+   ListViews (audio + video)
+   ============================================================ */
+.list-view {
+    -fx-background-color: #232323;
+    -fx-border-color: #3a3a3a;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d0d0d0;
+    -fx-padding: 6 10 6 10;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #a84747;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #4a90d9;
+    -fx-text-fill: white;
+}
+
+/* ============================================================
+   Video area
+   ============================================================ */
+.video-pane {
+    -fx-background-color: rgba(46, 29, 51, 0.048);
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* ============================================================
+   Bottom bar (now playing + slider + controls)
+   ============================================================ */
+.bottom-bar {
+    -fx-background-color: #2a2a2a;
+    -fx-padding: 12;
+    -fx-spacing: 8;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 1 0 0 0;
+}
+
+.now-playing {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 14px;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.button {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #e0e0e0;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+
+.button:hover {
+    -fx-background-color: #131fc7;
+}
+
+.button:pressed {
+    -fx-background-color: #4a90d9;
+    -fx-text-fill: white;
+}
+
+.button:focused {
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+}
+
+/* Special style for the Play/Pause button */
+.play-pause-button {
+    -fx-background-color: #4a90d9;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 24 8 24;
+}
+
+.play-pause-button:hover {
+    -fx-background-color: #5aa0e9;
+}
+
+.play-pause-button:pressed {
+    -fx-background-color: #3a80c9;
+}
+
+/* ============================================================
+   Slider (progress bar)
+   ============================================================ */
+.slider .track {
+    -fx-background-color: #3a3a3a;
+    -fx-background-radius: 3;
+    -fx-pref-height: 6;
+}
+
+.slider .thumb {
+    -fx-background-color: #4a90d9;
+    -fx-background-radius: 10;
+    -fx-pref-width: 14;
+    -fx-pref-height: 14;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #5aa0e9;
+}

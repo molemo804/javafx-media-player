@@ -1,0 +1,39 @@
+# ======================
+# Maven build output
+# ======================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# ======================
+# Compiled class files
+# ======================
+*.class
+
+# ======================
+# IDE settings
+# ======================
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# ======================
+# OS-specific files
+# ======================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ======================
+# Logs
+# ======================
+*.log
+hs_err_pid*

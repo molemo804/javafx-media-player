@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ====================== Project Identity ====================== -->
+  <groupId>com.maven</groupId>
+  <artifactId>first-maven-project</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>JavaFX Media Player</name>
+  <description>A JavaFX media player with audio/video playlist support.</description>
+
+  <!-- ====================== Version Properties ====================== -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <maven.compiler.release>25</maven.compiler.release>
+
+    <!-- Library versions (change here, applies everywhere) -->
+    <javafx.version>25</javafx.version>
+    <junit.version>5.11.0</junit.version>
+
+    <!-- Plugin versions -->
+    <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+    <maven.surefire.plugin.version>3.3.0</maven.surefire.plugin.version>
+    <maven.jar.plugin.version>3.4.2</maven.jar.plugin.version>
+    <maven.clean.plugin.version>3.4.0</maven.clean.plugin.version>
+    <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+    <javafx.plugin.version>0.0.8</javafx.plugin.version>
+
+    <!-- Application entry point -->
+    <main.class>com.maven.mediaplayer.Main</main.class>
+  </properties>
+
+  <!-- ====================== Dependencies ====================== -->
+  <dependencies>
+    <!-- JavaFX: UI controls + media playback -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- ====================== Build Configuration ====================== -->
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+
+    <plugins>
+      <!-- Compile with JDK 25 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+        </configuration>
+      </plugin>
+
+      <!-- Test runner -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.surefire.plugin.version}</version>
+      </plugin>
+
+      <!-- Package as a runnable JAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${maven.jar.plugin.version}</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>${main.class}</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <!-- Run the JavaFX app: mvn javafx:run -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>${javafx.plugin.version}</version>
+        <configuration>
+          <mainClass>${main.class}</mainClass>
+          <options>
+            <option>--enable-native-access=javafx.graphics,javafx.media</option>
+          </options>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
